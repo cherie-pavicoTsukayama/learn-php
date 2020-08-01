@@ -14,10 +14,10 @@
 <article class="main-content col-xs-8">
 
 
-<h1>
+
 		<?php
 		// the echo function prints to the dom
-			echo "hello";
+			echo "<h1>hello</h1>";
 
 		/*
 		   Step 1:  Use the Echo Function to say hello with html h1                  tags embedded inside php.
@@ -32,7 +32,7 @@
 
 
 		?>
-</h1>
+
 
 
 		</article><!--MAIN CONTENT-->
