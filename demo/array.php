@@ -9,6 +9,7 @@
   <?php
     $numList = [1, 23412, 345];
     echo $numList[0];
+    echo "<br>";
     print_r($numList);
   ?>
 </body>
