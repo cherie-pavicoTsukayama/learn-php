@@ -6,17 +6,26 @@
 		<aside class="col-xs-4">
 
 	<?php Navigation();?>
-			
-			
+
+
 		</aside><!--SIDEBAR-->
 
 
 		<article class="main-content col-xs-8">
-		
+
 
 <?php
 
 
+		$number1 = 10;
+		$number2 = 20;
+		echo "$number1 + $number2 = " . ($number1 + $number2);
+		echo "<br>";
+		$array = [10, 20];
+		echo "$number1 + $number2 = " . ($array[0] + $array[1]);
+		echo "<br>";
+		$associativeArray = ["num1" => 10, "num2" => 20];
+		echo "$number1 + $number2 = " . ($associativeArray["num1"] + $associativeArray["num2"]);
 
 		/* Step 1: Make 2 variables called number1 and number2 and set 1 to value 10 and the other 20:
 
@@ -25,15 +34,15 @@
 
 		  Step3: Make 2 Arrays with the same values, one regular and the other associative
 
-		 
+
 			 */
 
-		
+
 
 
 		?>
 
-	
+
 
 		</article><!--MAIN CONTENT-->
 
