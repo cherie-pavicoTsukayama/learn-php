@@ -1,12 +1,9 @@
 <?php
 if(isset($_POST['submit'])) {
-  echo "The submit button was pressed" . "<br>";
-}
-if(isset($_POST['username'])) {
-  echo "The username is submitted" . "<br>";
-}
-if(isset($_POST['password'])) {
-  echo "The password is submitted" . "<br>";
+  $username = $_POST['username'];
+  echo "Username: " . $username . "<br>";
+  $password = $_POST['password'];
+  echo "Password: " . $password . "<br>";
 }
 
 ?>
