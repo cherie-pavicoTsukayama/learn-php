@@ -4,15 +4,15 @@
 
 		<aside class="col-xs-4">
 		<?php Navigation();?>
-			
-			
+
+
 		</aside><!--SIDEBAR-->
 
 
 <article class="main-content col-xs-8">
 
-	
-	<?php 
+
+	<?php
 
 
 /*  Step1: Use a pre-built math function here and echo it
@@ -25,7 +25,7 @@
 
  */
 
-	
+
 ?>
 
 
