@@ -26,13 +26,13 @@
 		return (2+1);
 	}
 
-	echo $result = calculate() . "<br>";
+	echo "calculate function adding the numbers 1 and 2 together: " . $result = calculate() . "<br>";
 
 	function addition($num1, $num2) {
 		return ($num1+$num2);
 	}
 
-	echo $result = addition(4, 5);
+	echo "addition function adding the numbers 4 and 5 together: " . $result = addition(4, 5);
 ?>
 
 
