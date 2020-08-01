@@ -6,15 +6,15 @@
 	<aside class="col-xs-4">
 
 		<?php Navigation();?>
-			
-		
+
+
 	</aside><!--SIDEBAR-->
 
 
 <article class="main-content col-xs-8">
 
-	
-	<?php  
+
+	<?php
 
 /*  Step1: Define a function and make it return a calculation of 2 numbers
 
@@ -22,8 +22,17 @@
 
 
  */
+	function calculate() {
+		return (2+1);
+	}
 
-	
+	echo $result = calculate() . "<br>";
+
+	function addition($num1, $num2) {
+		return ($num1+$num2);
+	}
+
+	echo $result = addition(4, 5);
 ?>
 
 
