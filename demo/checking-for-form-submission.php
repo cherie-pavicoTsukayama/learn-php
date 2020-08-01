@@ -1,9 +1,12 @@
 <?php
 if(isset($_POST['submit'])) {
   $username = $_POST['username'];
-  echo "Username: " . $username . "<br>";
   $password = $_POST['password'];
-  echo "Password: " . $password . "<br>";
+  if (strlen($username) === 0) {
+    echo 'Please enter a username';
+  } else {
+    echo 'Your username is: ' . $username;
+  }
 }
 
 ?>
