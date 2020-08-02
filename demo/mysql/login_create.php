@@ -1,23 +1,7 @@
 <?php
 include 'db.php';
-if(isset($_POST['submit'])) {
-  $username = $_POST['username'];
-  $password = $_POST['password'];
-  $query = "INSERT INTO users(username,password) ";
-  //the below variable is the same as the above but when you use the .= it will
-  //concatenate the code written after it to the variable above.
-  $query .= "VALUES ('$username', '$password')";
-  //use mysqli_query API to send the request to the database.
-  $result = mysqli_query($connection, $query);
-  //the below code checks if the result is false then runs the die method which
-  //cancels out of the code and returns and error.
-  if(!$result) {
-    die('Query FAILED' . mysqli_error($connection));
-  }
-}
-
-
-
+include 'functions.php';
+createRows();
 ?>
 
 
@@ -33,6 +17,7 @@ if(isset($_POST['submit'])) {
 <body>
   <div class="container">
     <div class="col-sm-6 mt-5">
+      <h1 class="text-center">Create</h1>
       <form action="login_create.php" method="post">
         <div class="form-group">
           <label for="username">Username</label>
@@ -42,7 +27,7 @@ if(isset($_POST['submit'])) {
           <label for="password">Password</label>
           <input required type="password" name="password" class="form-control">
         </div>
-        <input class="btn btn-primary" type="submit" name="submit" value="Submit">
+        <input class="btn btn-primary" type="submit" name="submit" value="Create">
       </form>
     </div>
   </div>
