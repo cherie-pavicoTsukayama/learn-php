@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="container">
-    <div class="col-xs-6">
+    <div class="col-6 mt-5">
       <form action="login.php" method="post">
         <div class="form-group">
           <label for="username">Username</label>
