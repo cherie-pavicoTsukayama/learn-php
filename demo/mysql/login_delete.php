@@ -3,9 +3,9 @@
   include "functions.php";
 ?>
 <?php
-if(isset($_POST['submit'])) {
+
   deleteRows();
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +20,7 @@ if(isset($_POST['submit'])) {
 
   <div class="container">
         <div class="col-sm-8 mt-5">
+          <h1 class="text-center">Delete A Row</h1>
           <form action="login_delete.php" method="post">
             <div class="form-group">
               <label for="username">Username</label>
@@ -37,7 +38,7 @@ if(isset($_POST['submit'])) {
 
               </select>
             </div>
-            <input class="btn btn-primary" type="submit" name="submit" value="delete">
+            <input class="btn btn-danger" type="submit" name="submit" value="Delete">
           </form>
         </div>
   </div>
