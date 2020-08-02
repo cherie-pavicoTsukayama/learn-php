@@ -56,6 +56,8 @@
     $result = mysqli_query($connection, $query);
     if(!$result) {
       die("Update Query FAILED" . mysqli_error($connection));
+    } else {
+      echo "Record Updated!";
     }
   }
 
