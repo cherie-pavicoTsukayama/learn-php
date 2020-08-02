@@ -36,10 +36,10 @@
             </div>
             <div class="form-group">
               <select name="" id="">
-                <option value="">Id</option>
+                <option value="">1</option>
               </select>
             </div>
-            <input class="btn btn-primary" type="submit" value="submit">
+            <input class="btn btn-primary" type="submit" value="Update">
           </form>
         </div>
   </div>

@@ -6,9 +6,7 @@
   //third parameter is the password
   //forth parameter is the database name ex: loginapp
   $connection  = mysqli_connect('localhost', 'root', '', 'loginapp');
-  if($connection) {
-    echo "connected to the database";
-  } else {
+  if(!$connection) {
     //will not excute any code and will report a specified error
     die("Database connection failed");
   }
