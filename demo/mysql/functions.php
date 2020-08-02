@@ -6,6 +6,7 @@
   function createRows() {
     if(isset($_POST['submit'])) {
       global $connection;
+
       $username = $_POST['username'];
       $password = $_POST['password'];
       $query = "INSERT INTO users(username,password) ";
@@ -18,7 +19,9 @@
       //cancels out of the code and returns and error.
       if(!$result) {
         die('Query FAILED' . mysqli_error($connection));
-  }
+      } else {
+        echo 'User created';
+      }
 }
   }
 
