@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 
 function Navigation(){
@@ -76,8 +76,4 @@ echo $page;
 
 
 
-
 ?>
-
-
-

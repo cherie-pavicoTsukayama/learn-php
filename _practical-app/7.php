@@ -28,8 +28,32 @@
 		Step 4 - Connect to Database and read data
 
 */
-	if(isset($_POST['name'])) {
+	if(isset($_POST['submit'])) {
+		$name = $_POST['name'];
+		$age = $_POST['age'];
+		$query = "INSERT INTO dogs(dogName,age) ";
+		$query .= "VALUES ('$name', '$age')";
+		$result = mysqli_query($connection, $query);
+		if(!$result) {
+			die('Query FAILED' . mysqli_error($connection));
+		} else {
+			echo 'Dog has been added!';
+		}
 
+		function readDogNames() {
+			global $connection;
+			$query = "SELECT * FROM dogs";
+			$result = mysqli_query($connection, $query);
+			if(!$result) {
+				die('Query FAILED') . mysqli_error($connection);
+			}
+			while($row = mysqli_fetch_assoc($result)) {
+				$name = $row['dogName'];
+				$age = $row['age'];
+				echo "Name: " . $name . "<br>";
+				echo "Age: " . $age . "<br>";
+			}
+		}
 	}
 	?>
 	<div>
@@ -45,6 +69,11 @@
 			</div>
 			<input class="btn btn-primary" type="submit" name="submit" value="submit">
 		</form>
+		<div>
+			<?php
+				readDogNames()
+			?>
+		</div>
 	</div>
 
 

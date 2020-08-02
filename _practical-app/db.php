@@ -1,6 +1,6 @@
 <?php
   $connection = mysqli_connect('localhost', 'root', '', 'dog_names');
-  if(!connection){
+  if(!$connection){
     die("Database connection failed");
   }
 ?>
