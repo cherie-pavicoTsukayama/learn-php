@@ -3,8 +3,14 @@ if(isset($_POST['submit'])) {
   $username = $_POST['username'];
   $password = $_POST['password'];
 
-  echo "Your username: " . $username . "<br>";
-  echo "Your password: ".$password;
+  if($username && $password) {
+    echo "Your username: " . $username . "<br>";
+    echo "Your password: ".$password;
+  } else {
+    echo "Username or password is not filled out";
+  }
+
+
 }
 
 
