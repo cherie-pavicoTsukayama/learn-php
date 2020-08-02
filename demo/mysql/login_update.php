@@ -1,14 +1,6 @@
 <?php
   include "db.php";
-
-  $query = "SELECT * FROM users";
-  $result = mysqli_query($connection, $query);
-
- //the below code checks if the result is false then runs the die method which
-  //cancels out of the code and returns and error.
-  if(!$result) {
-    die('Query FAILED' . mysqli_error($connection));
-  }
+  include "functions.php";
 ?>
 
 
@@ -35,8 +27,11 @@
               <input  class="form-control" type="text" name="password" placeholder="Password">
             </div>
             <div class="form-group">
-              <select name="" id="">
-                <option value="">1</option>
+              <select name="id" id="">
+                <?php
+                  showAllData();
+                ?>
+
               </select>
             </div>
             <input class="btn btn-primary" type="submit" value="Update">
