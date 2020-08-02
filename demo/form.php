@@ -27,7 +27,7 @@ if(isset($_POST['submit'])) {
 </head>
 <body>
 <div class="col-2 container mt-5">
-  <form class="d-flex flex-wrap" action="checking-for-form-submission.php" method="post">
+  <form class="d-flex flex-wrap" action="form.php" method="post">
     <input class="col-12" type="text" name="username" placeholder="Enter Username">
     <input class="col-12" type="password" name="password" placeholder="Enter Password">
     <br>
