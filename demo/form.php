@@ -1,9 +1,18 @@
 <?php
 if(isset($_POST['submit'])) {
+  $name = ["Edwin", "Cherie", "Parker", "Shane", "Irene"];
   $username = $_POST['username'];
-  echo "Username: " . $username . "<br>";
   $password = $_POST['password'];
-  echo "Password: " . $password . "<br>";
+  if (strlen($username) === 0) {
+    echo 'Please enter a username';
+  } else {
+    echo 'Your username is: ' . $username;
+  }
+  if(in_array($username, $name)){
+    echo "<br>";
+    echo "Your username has been verified";
+  }
+
 }
 
 ?>
@@ -18,7 +27,7 @@ if(isset($_POST['submit'])) {
 </head>
 <body>
 <div class="col-2 container mt-5">
-  <form class="d-flex flex-wrap" action="checking-for-form-submission.php" method="post">
+  <form class="d-flex flex-wrap" action="form.php" method="post">
     <input class="col-12" type="text" name="username" placeholder="Enter Username">
     <input class="col-12" type="password" name="password" placeholder="Enter Password">
     <br>
