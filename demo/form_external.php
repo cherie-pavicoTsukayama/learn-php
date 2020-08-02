@@ -9,10 +9,10 @@
   <title>Document</title>
 </head>
 <body>
-<div class="col-2 container mt-5">
-  <form class="d-flex flex-wrap" action="form_process.php" method="post">
-    <input class="col-12" type="text" name="username" placeholder="Enter Username">
-    <input class="col-12" type="password" name="password" placeholder="Enter Password">
+<div class=" mt-5">
+  <form  action="form_process.php" method="post">
+    <input type="text" name="username" placeholder="Enter Username">
+    <input  type="password" name="password" placeholder="Enter Password">
     <br>
     <input class="btn btn-primary" type="submit" name="submit">
   </form>
