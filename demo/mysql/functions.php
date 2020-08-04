@@ -9,6 +9,11 @@
 
       $username = $_POST['username'];
       $password = $_POST['password'];
+      // the below method stops SQL Injection, it stops hackers from harming
+      //your database. Like js/react it paramatarizes the data.
+      $username = mysqli_real_escape_string($connection, $username);
+      $password = mysqli_real_escape_string($connection, $password);
+
       $query = "INSERT INTO users(username,password) ";
       //the below variable is the same as the above but when you use the .= it will
       //concatenate the code written after it to the variable above.
