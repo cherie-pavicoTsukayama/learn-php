@@ -14,6 +14,18 @@
       $username = mysqli_real_escape_string($connection, $username);
       $password = mysqli_real_escape_string($connection, $password);
 
+      //blowfish hash format https://www.php.net/manual/en/function.crypt.php
+      $hashFormat = "$2y$10$";
+      //salt = needs to be 22 chars long and is the base for the hash above.
+      $salt = "iusesomecrazystrings22";
+      //concatenate the blowfish and salt
+      $hashF_and_salt = $hashFormat . $salt;
+      //use the crypt method and pass in the escaped string password var from
+      //above as the first argument and for the second argument pass in your
+      //parameters for the encryption. ($hashF_and_salt)
+      //Reassign the var password to the new encrypted password. 
+      $password = crypt($password,$hashF_and_salt);
+
       $query = "INSERT INTO users(username,password) ";
       //the below variable is the same as the above but when you use the .= it will
       //concatenate the code written after it to the variable above.
