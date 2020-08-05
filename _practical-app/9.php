@@ -5,6 +5,10 @@ $name = "Practice-Section-9-Set-Cookie";
 $value = "Cookie Has Been Set: Complete";
 $expiration = time() + (60 * 10 * 1 * 1);
 setcookie($name, $value, $expiration);
+
+session_start();
+
+$_SESSION['status'] = 'The session has started!'
 ?>
 
 
@@ -43,6 +47,7 @@ setcookie($name, $value, $expiration);
 	<?php
 		print_r($_GET);
 	?>
+
 	<?php
 		if(isset($_COOKIE["Practice-Section-9-Set-Cookie"])) {
 			$message = $_COOKIE["Practice-Section-9-Set-Cookie"];
@@ -51,6 +56,13 @@ setcookie($name, $value, $expiration);
 			echo "Cookie was not set....";
 		}
 	?>
+
+	<div>
+		<?php
+			echo 'Session Status: ' . $_SESSION['status'];
+		?>
+	</div>
+
 
 
 
