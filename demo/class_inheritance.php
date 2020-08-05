@@ -22,7 +22,9 @@
   class Plane extends Car {
   }
   $jet = new Plane();
-  echo $jet->wheels;
+  echo "The jet inherits the " . $jet->wheels . " from the Car class." . "<br>";
+  $jet->createDoors(1);
+  echo "The jet also inherits the methods of the Car class. The jet has " . $jet->doors . " doors.";
   // if(class_exists('Plane')) {
   //   echo "The Plane class exists!";
   //  } else {
