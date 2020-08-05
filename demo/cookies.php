@@ -2,7 +2,7 @@
   //The user info is stored in the super global cookie. It's stored as an associative array.
   //PHP and the apache server takes care of this.
   //$_COOKIE;
-  $name = "Jenny";
+  $name = "NameOfCookie";
   $value = 100;
   //the time() method is in seconds. It takes returns the current time in seconds.
   // Below we are setting the expiration to the current time PLUS (60 seconds * 60 Min * 24 hours * 7)
@@ -23,10 +23,10 @@
 </head>
 <body>
   <?php
-    if(isset($_COOKIE['Jenny'])) {
-      $someOne = $_COOKIE["Jenny"];
-      //echos the value of the cookie not the name. 
-      echo $someOne;
+    if(isset($_COOKIE['NameOfCookie'])) {
+      $someOne = $_COOKIE["NameOfCookie"];
+      //echos the value of the cookie not the name.
+      echo 'the value property of the cookie is:' . $someOne;
     } else {
       $someOne = "";
     }
