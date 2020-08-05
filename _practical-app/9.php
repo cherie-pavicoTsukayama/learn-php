@@ -45,7 +45,9 @@ $_SESSION['status'] = 'The session has started!'
 		<a href="9.php?id=<?php echo $name ?>&class=<?php echo $class ?>"><?php echo $button ?></a>
 	</div>
 	<?php
-		print_r($_GET);
+		if(isset($_GET['id'])) {
+			echo $_GET['id'] . "<br>";
+		}
 	?>
 
 	<?php
