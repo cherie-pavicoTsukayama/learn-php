@@ -1,6 +1,6 @@
 <?php include "functions.php"; ?>
 <?php include "includes/header.php";?>
-<?php include "db.php"; ?>
+<?php include "db.php";?>
 
 	<section class="content">
 
