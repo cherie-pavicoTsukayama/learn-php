@@ -44,13 +44,14 @@
                     <span class="glyphicon glyphicon-chevron-right"></span>
                 </a>
                 <hr>
-            </div>
-
-            <!-- Blog Sidebar Widgets Column -->
-            <?php include 'includes/sidebar.php' ?>\
             <?php
                 }
             ?>
+             </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+            <?php include 'includes/sidebar.php' ?>\
+
         </div>
 
         <!-- /.row -->
