@@ -12,10 +12,10 @@
   foreach($db as $key => $value) {
     define(strtoupper($key), $value);
   }
-//use the constants as arguemnts in the mysqli_connect method. 
+//use the constants as arguemnts in the mysqli_connect method.
   $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-  if($connection) {
-    echo 'You are connected';
+  if(!$connection) {
+    echo 'You are not connected';
   }
 
 ?>
