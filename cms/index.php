@@ -1,4 +1,4 @@
-    <?php include 'includes/header.php'?>;
+    <?php include 'includes/header.php'?>
     <?php include 'includes/db.php' ?>
 
     <!-- Navigation -->
@@ -30,7 +30,7 @@
                 <hr>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
                 <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
-=                <hr>
+                <hr>
             </div>
 
             <!-- Blog Sidebar Widgets Column -->
