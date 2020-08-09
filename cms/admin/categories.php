@@ -1,4 +1,4 @@
-<?php include 'includes/admin-header.php' ?>
+<?php include 'includes/admin_header.php' ?>
 
     <div id="wrapper">
 
@@ -65,4 +65,4 @@
 
         <!-- /#page-wrapper -->
 
-<?php include "includes/footer.php" ?>
+<?php include "includes/admin_footer.php" ?>
