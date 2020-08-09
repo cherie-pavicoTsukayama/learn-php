@@ -16,23 +16,23 @@
                         <small>Author</small>
                     </h1>
                     <div class="col-sm-6">
-<?php
-if(isset($_POST['submit'])) {
-  $cat_title = $_POST['cat_title'];
-  $cat_title = mysqli_real_escape_string($connection, $cat_title);
-  if($cat_title === '' || empty($cat_title)) {
-    echo 'This field should not be empty.';
-  } else {
-    $query = "INSERT INTO categories(cat_title) ";
-    $query .= "VALUES('{$cat_title}') ";
-    $create_category_query = mysqli_query($connection, $query);
-    if(!$create_category_query) {
-      die('QUERY FAILED' . mysqli_error($connection));
-    }
-  }
-}
-?>
-
+                        <?php
+                        if(isset($_POST['submit'])) {
+                          $cat_title = $_POST['cat_title'];
+                          $cat_title = mysqli_real_escape_string($connection, $cat_title);
+                          if($cat_title === '' || empty($cat_title)) {
+                            echo 'This field should not be empty.';
+                          } else {
+                            $query = "INSERT INTO categories(cat_title) ";
+                            $query .= "VALUES('{$cat_title}') ";
+                            $create_category_query = mysqli_query($connection, $query);
+                            if(!$create_category_query) {
+                              die('QUERY FAILED' . mysqli_error($connection));
+                            }
+                          }
+                        }
+                        ?>
+<!-- Add Category -->
                       <form action="categories.php" method="post">
                         <div class="form-group">
                           <label for="cat_title">Add Category</label>
@@ -50,6 +50,13 @@ if(isset($_POST['submit'])) {
                             value="Add Category">
                         </div>
                       </form>
+<!-- Edit Category -->
+                      <?php
+                        if(isset($_GET['edit'])) {
+                          $cat_id = $_GET['edit'];
+                          include "includes/update_categories.php";
+                        }
+                      ?>
                     </div>
                     <div class="col-sm-6">
                       <table class="table table-bordered table-hover">
@@ -57,7 +64,7 @@ if(isset($_POST['submit'])) {
                           <tr>
                             <th>Id</th>
                             <th>Category Title</th>
-                            <th>Action</th>
+                            <th class="text-center" colspan="2">Action</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -74,6 +81,11 @@ $select_categories = mysqli_query($connection, $query);
     echo "<td>
             <a href='categories.php?delete={$cat_id}'>
               Delete
+            </a>
+          </td>";
+    echo "<td>
+            <a href='categories.php?edit={$cat_id}'>
+              Edit
             </a>
           </td>";
     echo "</tr>";
