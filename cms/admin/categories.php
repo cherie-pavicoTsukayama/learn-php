@@ -16,7 +16,13 @@
                         <small>Author</small>
                     </h1>
                     <div class="col-sm-6">
-                      <form action="">
+<?php
+if(isset($_POST['submit'])) {
+  echo '<h1>it works</h1>';
+}
+?>
+
+                      <form action="categories.php" method="post">
                         <div class="form-group">
                           <label for="cat-title">Add Category</label>
                           <input
