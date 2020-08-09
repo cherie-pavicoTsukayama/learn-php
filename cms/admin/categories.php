@@ -32,7 +32,7 @@ if(isset($_POST['submit'])) {
   }
 }
 ?>
-
+<!-- Add Category -->
                       <form action="categories.php" method="post">
                         <div class="form-group">
                           <label for="cat_title">Add Category</label>
@@ -50,6 +50,48 @@ if(isset($_POST['submit'])) {
                             value="Add Category">
                         </div>
                       </form>
+<!-- Edit Category -->
+                      <form action="categories.php" method="post">
+                        <div class="form-group">
+                          <label for="cat_title">Edit Category</label>
+<?php
+if(isset($_GET['edit'])) {
+  $edit_cat_id = $_GET['edit'];
+  $query = "SELECT * FROM categories WHERE cat_id = $edit_cat_id ";
+  $select_categories_id = mysqli_query($connection, $query);
+
+  while($row = mysqli_fetch_assoc($select_categories_id)) {
+    $cat_title = $row['cat_title'];
+    $cat_id = $row['cat_id'];
+?>
+<input
+  class="form-control"
+  type="text"
+  placeholder="Edit Category"
+  name="cat_title"
+  value="<?php
+   if(isset($cat_title)) {
+     echo $cat_title;
+   } else {
+     echo "";
+   }
+  ?>"
+  >
+<?php }
+} ?>
+
+
+
+
+                        </div>
+                        <div class="form-group">
+                          <input
+                            class="btn btn-primary"
+                            type="submit"
+                            name="edit"
+                            value="Update">
+                        </div>
+                      </form>
                     </div>
                     <div class="col-sm-6">
                       <table class="table table-bordered table-hover">
@@ -57,7 +99,7 @@ if(isset($_POST['submit'])) {
                           <tr>
                             <th>Id</th>
                             <th>Category Title</th>
-                            <th>Action</th>
+                            <th class="text-center" colspan="2">Action</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -74,6 +116,11 @@ $select_categories = mysqli_query($connection, $query);
     echo "<td>
             <a href='categories.php?delete={$cat_id}'>
               Delete
+            </a>
+          </td>";
+    echo "<td>
+            <a href='categories.php?edit={$cat_id}'>
+              Edit
             </a>
           </td>";
     echo "</tr>";
