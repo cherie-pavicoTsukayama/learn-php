@@ -16,22 +16,22 @@
                         <small>Author</small>
                     </h1>
                     <div class="col-sm-6">
-<?php
-if(isset($_POST['submit'])) {
-  $cat_title = $_POST['cat_title'];
-  $cat_title = mysqli_real_escape_string($connection, $cat_title);
-  if($cat_title === '' || empty($cat_title)) {
-    echo 'This field should not be empty.';
-  } else {
-    $query = "INSERT INTO categories(cat_title) ";
-    $query .= "VALUES('{$cat_title}') ";
-    $create_category_query = mysqli_query($connection, $query);
-    if(!$create_category_query) {
-      die('QUERY FAILED' . mysqli_error($connection));
-    }
-  }
-}
-?>
+                        <?php
+                        if(isset($_POST['submit'])) {
+                          $cat_title = $_POST['cat_title'];
+                          $cat_title = mysqli_real_escape_string($connection, $cat_title);
+                          if($cat_title === '' || empty($cat_title)) {
+                            echo 'This field should not be empty.';
+                          } else {
+                            $query = "INSERT INTO categories(cat_title) ";
+                            $query .= "VALUES('{$cat_title}') ";
+                            $create_category_query = mysqli_query($connection, $query);
+                            if(!$create_category_query) {
+                              die('QUERY FAILED' . mysqli_error($connection));
+                            }
+                          }
+                        }
+                        ?>
 <!-- Add Category -->
                       <form action="categories.php" method="post">
                         <div class="form-group">
@@ -51,47 +51,12 @@ if(isset($_POST['submit'])) {
                         </div>
                       </form>
 <!-- Edit Category -->
-                      <form action="categories.php" method="post">
-                        <div class="form-group">
-                          <label for="cat_title">Edit Category</label>
-<?php
-if(isset($_GET['edit'])) {
-  $edit_cat_id = $_GET['edit'];
-  $query = "SELECT * FROM categories WHERE cat_id = $edit_cat_id ";
-  $select_categories_id = mysqli_query($connection, $query);
-
-  while($row = mysqli_fetch_assoc($select_categories_id)) {
-    $cat_title = $row['cat_title'];
-    $cat_id = $row['cat_id'];
-?>
-<input
-  class="form-control"
-  type="text"
-  placeholder="Edit Category"
-  name="cat_title"
-  value="<?php
-   if(isset($cat_title)) {
-     echo $cat_title;
-   } else {
-     echo "";
-   }
-  ?>"
-  >
-<?php }
-} ?>
-
-
-
-
-                        </div>
-                        <div class="form-group">
-                          <input
-                            class="btn btn-primary"
-                            type="submit"
-                            name="edit"
-                            value="Update">
-                        </div>
-                      </form>
+                      <?php
+                        if(isset($_GET['edit'])) {
+                          $cat_id = $_GET['edit'];
+                          include "includes/update_categories.php";
+                        }
+                      ?>
                     </div>
                     <div class="col-sm-6">
                       <table class="table table-bordered table-hover">
