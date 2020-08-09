@@ -1,4 +1,4 @@
-<?php include 'includes/header.php' ?>
+<?php include 'includes/admin-header.php' ?>
 
     <div id="wrapper">
 
@@ -15,7 +15,25 @@
                         Welcome to Admin
                         <small>Author</small>
                     </h1>
-
+                    <div class="col-sm-6">
+                      <form action="">
+                        <div class="form-group">
+                          <label for="cat-title">Add Category</label>
+                          <input
+                            class="form-control"
+                            type="text"
+                            placeholder="Add New Category"
+                            name="cat-title">
+                        </div>
+                        <div class="form-group">
+                          <input
+                            class="btn btn-primary"
+                            type="submit"
+                            name="submit"
+                            value="Add Category">
+                        </div>
+                      </form>
+                    </div>
                 </div>
             </div>
             <!-- /.row -->
