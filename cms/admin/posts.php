@@ -15,7 +15,7 @@
                         Welcome to Admin
                         <small>Author</small>
                     </h1>
-                    <table>
+                    <table class="table table-bordered table-hover">
                       <thead>
                         <tr>
                           <th>Id</th>
@@ -29,6 +29,19 @@
                           <th>Date</th>
                         </tr>
                       </thead>
+                      <tbody>
+                        <tr>
+                          <td>10</td>
+                          <td>Edwin</td>
+                          <td>Bootstrap Framework</td>
+                          <td>Bootstrap</td>
+                          <td>Status</td>
+                          <td>Image</td>
+                          <td>tags</td>
+                          <td>comments</td>
+                          <td>8/10/2020</td>
+                        </tr>
+                      </tbody>
                     </table>
                 </div>
             </div>
