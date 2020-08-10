@@ -45,30 +45,24 @@
                           $post_date = $row['post_date'];
 
                           echo  "<tr>
-                                  <td>$post_id</td>
-                                  <td>$post_author</td>
-                                  <td>$post_title</td>
-                                  <td>$post_category_id</td>
-                                  <td>$post_status</td>
-                                  <td>$post_image</td>
-                                  <td>$post_tags</td>
-                                  <td>$post_comment_count</td>
-                                  <td>$post_date</td>
+                                  <td>{$post_id}</td>
+                                  <td>{$post_author}</td>
+                                  <td>{$post_title}</td>
+                                  <td>{$post_category_id}</td>
+                                  <td>{$post_status}</td>
+                                  <td>
+                                    <img
+                                      width='100'
+                                      src='../images/$post_image'
+                                      alt='post image'>
+                                  </td>
+                                  <td>{$post_tags}</td>
+                                  <td>{$post_comment_count}</td>
+                                  <td>{$post_date}</td>
                                 </tr>";
                         }
 
                       ?>
-
-                        <td>10</td>
-                        <td>Edwin</td>
-                        <td>Bootstrap Framework</td>
-                        <td>Bootstrap</td>
-                        <td>Status</td>
-                        <td>Image</td>
-                        <td>tags</td>
-                        <td>comments</td>
-                        <td>8/10/2020</td>
-
                     </tbody>
                   </table>
                 </div>
